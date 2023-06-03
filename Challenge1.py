@@ -15,30 +15,30 @@
 # k=17
 # print(sum_of_two_numbers(list, k))
 
-def sum_of_two_numbers(lst):
+def sum_of_two_numbers(list):
     """
     Finds any two numbers in the list that add up to the same number.
 
     Args:
-        lst (list): The list of numbers to search.
+        list (list): The list of numbers to search.
 
     Returns:
         tuple: A tuple containing the sum of the pair of numbers and a list of all pairs that add up to the same number,
         or None if no such pair is found.
     """
     pairs = []  # List to store pairs of numbers
-    n = len(lst)
+    n = len(list)
     for i in range(n):
         for j in range(i + 1, n):
-            current_sum = lst[i] + lst[j]  # Calculate the sum of the current pair
+            current_sum = list[i] + list[j]  # Calculate the sum of the current pair
             existing_pair = next((pair for pair in pairs if pair[0] == current_sum), None)
             # Check if a pair with the same sum already exists in the pairs list
             if existing_pair is None:
                 # If no pair exists, add the current pair to the pairs list
-                pairs.append((current_sum, lst[i], lst[j]))
+                pairs.append((current_sum, list[i], list[j]))
             else:
                 existing_pair_numbers = (existing_pair[1], existing_pair[2])
-                current_pair_numbers = (lst[i], lst[j])
+                current_pair_numbers = (list[i], list[j])
                 # Check if the current pair contains different numbers than the existing pair
                 if current_pair_numbers != existing_pair_numbers:
                     # If different numbers, return the sum and both pairs
