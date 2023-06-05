@@ -1,21 +1,29 @@
-# """
-# The goal was to output the True or False if the value of two numbers is equal to K.
-# """
+# function to take in the values and return true
+def sum_of_two_num(list, k):
+    """
+    Finds sum of two numbers in the list that add up to the number k.
 
-# # function to take in the values and return true
-# def sum_of_two_numbers(list, k):
-#     n = len(list)
-#     for i in range(n):
-#         for j in range(i+1, n):
-#             if((list[i] + list[j]) == k):
-#                 return list[i], list[j]
-#     return None
+    Args:
+        list (list): The list of numbers to search.
+        k (integer): The number they add up to.
+
+    Returns:
+        tuple: A tuple containing the sum of the pair of numbers and a list of all pairs that add up to the same number,
+        or None if no such pair is found.
+    """
+    n = len(list)
+    for i in range(n):
+        for j in range(i+1, n):
+            if((list[i] + list[j]) == k):
+                return list[i], list[j], True
+    return None
         
-# list = [10, 15, 3, 7]
-# k=17
-# print(sum_of_two_numbers(list, k))
+list = [10, 15, 3, 7]
+k=17
+print(sum_of_two_num(list, k))
 
-def sum_of_two_numbers(list):
+# function extended
+def checking_the_sum_of_two_num(list):
     """
     Finds any two numbers in the list that add up to the same number.
 
@@ -47,7 +55,7 @@ def sum_of_two_numbers(list):
 
 numbers = [10, 15, 3, 2, 7]
 
-result = sum_of_two_numbers(numbers)
+result = checking_the_sum_of_two_num(numbers)
 if result:
     print(f"The number that the pairs add up to is: {result[0]}")
     for pair in result[1]:
